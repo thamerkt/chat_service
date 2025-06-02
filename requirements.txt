@@ -32,3 +32,4 @@ django-cors-headers
 dotenv
 psycopg2
 google-generativeai
+channels_redis
