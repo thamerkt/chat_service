@@ -57,10 +57,11 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("host.docker.internal", 6379)],  # <--- use Docker service name
+            "hosts": ["redis://red-d0uaek2dbo4c73apegag:6379"],
         },
     },
 }
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
