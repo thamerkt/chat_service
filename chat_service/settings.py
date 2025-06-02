@@ -109,11 +109,11 @@ WSGI_APPLICATION = 'chat_service.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chat_db',      # your DB name
-        'USER': 'postgres',          # your DB user
-        'PASSWORD': 'thamer4a',  # your DB password
-        'HOST': 'localhost',       # or your DB host
-        'PORT': '5432',            # default PostgreSQL port
+        'NAME': os.environ.get('PGDATABASE', 'account_db_kpsn'),  # fallback to your DB name
+        'USER': os.environ.get('PGUSER', 'thamer'),               # fallback username
+        'PASSWORD': os.environ.get('PGPASSWORD'),                  # *must be set in env*
+        'HOST': os.environ.get('PGHOST', 'dpg-d0tflpqdbo4c739ks99g-a'),  # your internal hostname
+        'PORT': os.environ.get('PGPORT', '5432'),                  # default postgres port
     }
 }
 
