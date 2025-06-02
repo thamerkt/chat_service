@@ -31,3 +31,4 @@ zope.interface==6.3
 django-cors-headers
 dotenv
 psycopg2
+google-generativeai
