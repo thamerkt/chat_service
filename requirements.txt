@@ -30,3 +30,4 @@ tzdata==2024.1
 zope.interface==6.3
 django-cors-headers
 dotenv
+psycopg2
