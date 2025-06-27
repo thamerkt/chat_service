@@ -27,9 +27,11 @@ def get_or_create_chatroom(request):
 
 
 @api_view(['GET'])
-def chat_view(request, room_id, user_id="cc327b55-1cfe-4be8-ae0c-c469bc2848a1"):
+def chat_view(request, room_id):
     try:
         chatroom = ChatRoom.objects.get(id=room_id)
+        user_id = request.query_params.get('user_id')
+        print ("user",user_id)
     except ChatRoom.DoesNotExist:
         return Response({'detail': 'ChatRoom not found.'}, status=status.HTTP_404_NOT_FOUND)
 
